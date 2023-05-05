@@ -1,0 +1,535 @@
+ {% extends 'base.html' %}
+{% load  static %}
+{% block links %}
+
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+    <!-- MDB -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+{% endblock links %}
+{% block content %}
+     
+
+  <!--Main layout-->
+  <main class="my-5">
+    <div class="container">
+      <!--Grid row-->
+      <div class="row">
+        <!--Grid column-->
+        <div class="col-md-9 mb-4">
+          <!--Section: Content-->
+          <section>
+            <!-- Post -->
+            {% if error == True %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <strong>{{errormsg}}</strong> 
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            {% endif %}
+           <form method="POST">
+            {% csrf_token %}
+            <label for="numberofdays">Enter Number of Days</label>
+            <input type="number" class="form-control" name="numberofdays" id="numberofdays" placeholder="Enter number of days">
+            <br>
+            <div class="row">
+              <div class="col-md-4 mb-4">
+                <div class="bg-image hover-overlay shadow-1-strong rounded ripple" data-mdb-ripple-color="light">
+                  <img src="https://static.toiimg.com/photo/71598586.cms" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-8 mb-4">
+                <h5>Naini Lake</h5>
+                <p>
+                  Nainital, also known as Naini Lake is a natural freshwater body, situated amidst the township of Nainital in Kumaon. It is tectonic in origin and is kidney shaped or crescent shaped and has an outfall at the southeastern end. Nainital, along with other lakes of Kumaon, is integral to tourism and recreation in Kumaon.
+                </p>
+
+                <input class="form-check-input" type="checkbox" name="place1" id="place1">
+                <label class="form-check-label" for="place1">
+                  Select Place
+                </label>  
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4 mb-4">
+                <div class="bg-image hover-overlay shadow-1-strong rounded ripple" data-mdb-ripple-color="light">
+                  <img src="https://www.nainitalcorbetttourism.com/images/nainital-tourism/nainital-zoo.jpg" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-8 mb-4">
+                <h5>Nainital Zoo</h5>
+                <p>
+                 The Nainital Zoo, officially known as “G. B. Pant High Altitude Zoo, Nainital”. It covers an area of 04.592 hectares on the top of SherKaDandahill at an elevation of about 2100 mtr. in Nainital City, Uttarakhand.
+                Initially, the permission for establishment of zoo was granted in 1980 by then, Government of Uttar Pradesh. Construction work was completed in the year 1984. The zoo was opened to public on 01 June 1995 and since 1March 2002 the “Bharat Ratna G.B. Pant High Altitude Zoo Management So
+                </p>
+
+                <input class="form-check-input" type="checkbox" name="place2"  id="place2">
+                <label class="form-check-label" for="place2">
+                  Select Place
+                </label>  
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 mb-4">
+                <div class="bg-image hover-overlay shadow-1-strong rounded ripple" data-mdb-ripple-color="light">
+                  <img src="https://nainitaltourism.org.in/images//tourist-places/aerial-ropeway-nainital/aerial-ropeway-nainital-indian-tourism-entry-fee.jpg" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-8 mb-4">
+                <h5>Aerial Ropeway Nainital</h5>
+                <p>
+                  The Aerial Ropeway in Nainital is one of the biggest tourist attractions. With hundreds of visitors flying in each day, aerial ropeway carries people from Mallital to the Snow View Point, one of the popular places to visit in Nainital. This three-minute ride is no less than a dream as it offers you the best bird-eye view of the Nainital City and Naini Lake.
+
+Connecting the near flats of the Nainital city to the Snow View Point, this ropeway starts at Mallital and takes around 3 minutes to cover 
+                </p>
+
+                <input class="form-check-input" type="checkbox" name="place3" id="place3">
+                <label class="form-check-label" for="place3">
+                  Select Place
+                </label>  
+              </div>
+            </div><div class="row">
+              <div class="col-md-4 mb-4">
+                <div class="bg-image hover-overlay shadow-1-strong rounded ripple" data-mdb-ripple-color="light">
+                  <img src="https://cdn.s3waas.gov.in/s38d7d8ee069cb0cbbf816bbb65d56947e/uploads/bfi_thumb/2018051650-olwa9pgaqkprd3klwq4o63xmh07ezxvheo0i433j4a.jpg" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-8 mb-4">
+                <h5>Naina Devi Temple</h5>
+                <p>
+                 The Temple of Shri Naina Devi Ji is situated on a hilltop, base of which also has samadhi of bhagat Jeona Morh who died in 12th century, in the Bilaspur District, Himachal Pradesh, India. The temple is connected with National Highway No. 21. The temple at the top of the hill can be reached via road (that curves round the hill up to a certain point) and then by concrete steps (that finally reach the top). There is also a cable car facility that moves pilgrims from the base of the hill all the way
+                </p>
+
+                <input class="form-check-input" type="checkbox" name="place4"  id="place4">
+                <label class="form-check-label" for="place4">
+                  Select Place
+                </label> 
+              </div>
+            </div>
+           
+            {% comment %} </div> {% endcomment %}
+            <div class="row">
+              <div class="col-md-4 mb-4">
+                <div class="bg-image hover-overlay shadow-1-strong rounded ripple" data-mdb-ripple-color="light">
+                  <img src="https://nainitaltourism.org.in/images/places-to-visit/headers/the-mall-road-nainital-indian-tourism-entry-fee-timings-holidays-reviews-header.jpg" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-8 mb-4">
+                <h5>Mall Road Nainital</h5>
+                <p>
+                  The Mall is a most popular name in Nainital city. A busiest road in day time, The Mall runs side by side of the Nainital Lake. 
+                  Britishers constructed The Mall Road which passes through the centre of Nainital and connects two main ends of Nainital city, Mallital and Tallital
+                </p>
+
+                <input class="form-check-input" type="checkbox" name="place5"  id="place5">
+                <label class="form-check-label" for="place5">
+                  Select Place
+                </label> 
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 mb-4">
+                <div class="bg-image hover-overlay shadow-1-strong rounded ripple" data-mdb-ripple-color="light">
+                  <img src="https://www.tourmyindia.com/states/uttarakhand/images/tiffin-top-nainital1.jpg" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-8 mb-4">
+                <h5>Tiffin Top</h5>
+                <p>
+                  A popular picnic spot in Nainital, Tiffin Top (also known as Dorothy's Seat) is located on Ayarpatta hill, offers a magnificent 360 degree view of the Nainital town and surrounding hills of kumaon region. Apart from a picnic spot amidst the calm and serene environment, Tiffin Top is a delight for photographers. It should be visited by those who enjoy the nature’s calling and love capturing the divine beauty of nature in photographic shots.
+                </p>
+
+                <input class="form-check-input" type="checkbox" name="place6"  id="place6">
+                <label class="form-check-label" for="place6">
+                  Select Place
+                </label> 
+              </div>
+            </div><div class="row">
+              <div class="col-md-4 mb-4">
+                <div class="bg-image hover-overlay shadow-1-strong rounded ripple" data-mdb-ripple-color="light">
+                  <img src="https://dynamic.tourtravelworld.com/hotspot-images/eco-cave-garden-nainital-4962.jpg" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-8 mb-4">
+                <h5>Eco Cave Gardens</h5>
+                <p>
+                  Eco Cave Gardens is a newly developed tourist spot in Nainital. It comprises several natural inter connected caves of different animals. Hanging gardens makes this place more attractive. A children educational tour is the best option to explore Eco Cave Gardens.
+                </p>
+
+                <input class="form-check-input" type="checkbox" name="place7" id="place7">
+                <label class="form-check-label" for="place7">
+                  Select Place
+                </label> 
+              </div>
+            </div><div class="row">
+              <div class="col-md-4 mb-4">
+                <div class="bg-image hover-overlay shadow-1-strong rounded ripple" data-mdb-ripple-color="light">
+                  <img src="https://static.toiimg.com/thumb/msid-26352296,width=1200,height=900/26352296.jpg" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-8 mb-4">
+                <h5>Raj Bhawan</h5>
+                <p>
+                  Raj Bhawan, also called as Governor House is a British era building, now serves as the residence of Governor of Uttarakhand. Known for its magnificent looks and old age charming architecture, Raj Bhawan in Nainital previously served as summer residence of British Governors. Governor House or Raj Bhawan is located in splendid landscape and spreads across vast area.
+                </p>
+
+                <input class="form-check-input" type="checkbox" name="place8" id="place8">
+                <label class="form-check-label" for="place8">
+                  Select Place
+                </label> 
+              </div>
+            </div><div class="row">
+              <div class="col-md-4 mb-4">
+                <div class="bg-image hover-overlay shadow-1-strong rounded ripple" data-mdb-ripple-color="light">
+                  <img src="https://nainitaltourism.org.in/images//tourist-places/pangot-and-kilbury-bird-sanctuary-nainital/pangot-and-kilbury-bird-sanctuary-nainital-photo-gallery.jpg" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-8 mb-4">
+                <h5>Kilbury</h5>
+                <p>
+                  Kilbury is famous as birding route in Nainital, Uttarakhand. Developed as a splendid picnic spot in Nainital, Kilbury is definetly a bird watcher's paradise. Visitors finds a wide range of species of birds in their natural habitats with closeness. It is also the home of Naina Devi Himalayan Bird Reserve famous for number of birds species. Tourists enjoys the relaxing sound of chirping of birds in the forests of oak, pine and rhododendron.
+                </p>
+
+                <input class="form-check-input" type="checkbox" name="place9" id="place9">
+                <label class="form-check-label" for="place9">
+                  Select Place
+                </label> 
+              </div>
+            </div><div class="row">
+              <div class="col-md-4 mb-4">
+                <div class="bg-image hover-overlay shadow-1-strong rounded ripple" data-mdb-ripple-color="light">
+                  <img src="https://www.holidify.com/images/cmsuploads/compressed/671_20190514145903.jpg" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-8 mb-4">
+                <h5>Snow View Point</h5>
+                <p>
+                 Snow View Point is one of the most visited places by tourists for watching majestic Himalayas from Nainital. Known as best view point in Nainital, Snow view point offers tourists an excellent views of snow capped mountains like Nanda Devi, Trishul and Nanda Kot. Snow view point is well connected by road but an adventurous ride in aerial ropeway from Mallital is always worth it.
+                </p>
+
+                <input class="form-check-input" type="checkbox" name="place10" id="place10">
+                <label class="form-check-label" for="place10">
+                  Select Place
+                </label> 
+              </div>
+            </div><div class="row">
+              <div class="col-md-4 mb-4">
+                <div class="bg-image hover-overlay shadow-1-strong rounded ripple" data-mdb-ripple-color="light">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Gurney_House-the_home_of_Jim_Corbett.jpg/300px-Gurney_House-the_home_of_Jim_Corbett.jpg" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-8 mb-4">
+                <h5>Gurney House</h5>
+                <p>
+                  Gurney House is a historic building located in Nainital, Uttarakhand, India, and was the residence of hunter-conservationist and writer Jim Corbett. It is located near Nainital Lake, and was built in 1881. Miss Margaret Winifred Corbett, Jim Corbett's sister, sold the house to Mr. Sharda Prasad Varma in the year 1947 when they left for Kenya. Currently the house is owned by his granddaughter, Nilanjana Dalmia. The cottage was constructed in 1880 with the dismantled material of their earlie
+er house on Alma Hill (which was on the hill on which a landslide occurred). And hence the name implying a house built of carted material of a dismantled house.
+                </p>
+
+                <input class="form-check-input" type="checkbox" name="place11" id="place11">
+                <label class="form-check-label" for="place11">
+                  Select Place
+                </label> 
+              </div>
+            </div><div class="row">
+              <div class="col-md-4 mb-4">
+                <div class="bg-image hover-overlay shadow-1-strong rounded ripple" data-mdb-ripple-color="light">
+                  <img src="https://www.trawell.in/admin/images/upload/970722440Nainital_Tibetan_Market_Main.jpg" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-8 mb-4">
+                <h5>Tibetan and Bhotia Market</h5>
+                <p>
+                  The Tibetan market of Nainital, also called as Bhotia market, is a go-to place for shoppers. Located close to the city center, it is one of the most popular street markets in town. There is a wide variety of winter wear, and the delectable Tibetan food.
+
+Thupka and Momos are the delicacies you should look forward to. The Bhotia market offers an extensive variety of shawls, sweaters, mufflers, bags and other souvenirs. The vendors price the item highly, so brush up on your bargaining skills befo
+re you visit the place in order to get the best price.
+                </p>
+
+                <input class="form-check-input" type="checkbox" name="place12"  id="place12">
+                <label class="form-check-label" for="place12">
+                  Select Place
+                </label> 
+              </div>
+            </div><div class="row">
+              <div class="col-md-4 mb-4">
+                <div class="bg-image hover-overlay shadow-1-strong rounded ripple" data-mdb-ripple-color="light">
+                  <img src="https://www.nainitalcorbetttourism.com/images/nainital-tourism/naini-peak.jpg" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-8 mb-4">
+                <h5>Naina Peak</h5>
+                <p>
+                  Naina Peak is highest hill top and one of the the famous tourist spots in Nainital. This peak is also called as China Peak and Cheena Peak by locals in Naintal. Due to high altitude and lush green forest path, Naina Peak is favourite place in Nainital for trekking among travellers.
+                </p>
+
+                <input class="form-check-input" type="checkbox" name="place13"  id="place13">
+                <label class="form-check-label" for="place13">
+                  Select Place
+                </label> 
+              </div>
+            </div><div class="row">
+              <div class="col-md-4 mb-4">
+                <div class="bg-image hover-overlay shadow-1-strong rounded ripple" data-mdb-ripple-color="light">
+                  <img src="https://www.aries.res.in/sites/default/files/inline-images/institiute.jpeg" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-8 mb-4">
+                <h5> Aryabhatta Research Institute of Observational Sciencese</h5>
+                <p>
+                  Situated adjacent to the picturesque hill town of Nainital, ARIES (an acronym of Aryabhatta Research Institute of Observational Sciences) is one of the leading research Institutes which specializes in observational Astronomy & Astrophysics and Atmospheric Sciences. The main research interests of Astronomy & Astrophysics division are in solar, planetary, stellar, galactic and extra-galactic astronomy including stellar variabilities, X-ray binaries, star clusters, nearby galaxies, quasars, and inh
+herently transient events like supernovae and highly energetic gamma-ray bursts. Research focus in Atmospheric Sciences division is mainly in the lower part of the atmosphere and covers the studies on aerosols and trace gases. Moreover, to strengthen the scientific contribution.
+                </p>
+
+                <input class="form-check-input" type="checkbox" name="place14" id="place14">
+                <label class="form-check-label" for="place14">
+                  Select Place
+                </label> 
+              </div>
+            </div><div class="row">
+              <div class="col-md-4 mb-4">
+                <div class="bg-image hover-overlay shadow-1-strong rounded ripple" data-mdb-ripple-color="light">
+                  <img src="https://hindi.cdn.zeenews.com/hindi/sites/default/files/styles/zm_700x400/public/2021/06/15/847765-neem.png?itok=Ol2rbJIU" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-8 mb-4">
+                <h5>Kainchi Dam</h5>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus ratione
+                  Kainchi Dham is a beautiful ashram on the Nainital-Almora road offering a spiritual stopover in the lap of nature. This modern pilgrimage centre was established by Neem Karoli Baba, a saint of the early sixties. Along with Shri Poornanand of the Kainchi Village, Maharaj Neem Karoli built a temple dedicated to Hanuman.
+                </p>
+
+                <input class="form-check-input" type="checkbox" name="place15" id="place15">
+                <label class="form-check-label" for="place15">
+                  Select Place
+                </label> 
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4 mb-4">
+                <div class="bg-image hover-overlay shadow-1-strong rounded ripple" data-mdb-ripple-color="light">
+                  <img src="https://www.tourmyindia.com/states/uttarakhand/images/hanuman-garhi-nainital1.jpg" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-8 mb-4">
+                <h5>Hanuman Garhi</h5>
+                <p>
+                  Located at a height of 6,401 feet above sea level is the Hanuman Garhi temple, which is a famous Hindu temple near Mall road, Nainital. The temple is about 3.5 km from the Tallital Mall Road which is well connected by road.
+The inner shrine contains an idol of Lord Hanuman opening his chest and showing images of Lord Rama and Goddess Sita in his heart. Lord Hanuman, also known as Maruti Nandan, is the son of Lord Pawan (Air) and Anjani Mata. In the temple, there are shrines of Lord Shiva and Lord Rama also.
+                </p>
+
+                <input class="form-check-input" type="checkbox" name="place16" id="place16">
+                <label class="form-check-label" for="place16">
+                  Select Place
+                </label> 
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 mb-4">
+                <div class="bg-image hover-overlay shadow-1-strong rounded ripple" data-mdb-ripple-color="light">
+                  <img src="https://pix10.agoda.net/hotelImages/1160897/-1/d2fb74e434f132f55d253a0d7bf000e9.jpg?ca=7&ce=1&s=450x450" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-8 mb-4">
+                <h5>Aurobindo Ashram</h5>
+                <p>
+                  Embraced in the lush green mountains and away from the city noise, Sri Aurobindo Ashram offers its visitors a serene environment to breathe and live in. The main aim of the ashram is to help people attain self-satisfaction, good health, peace and calm from within through yoga and meditation. The place beholds a charismatic aura which feels divine and gifted. The moment you step into the ashram premises, relaxation flows in and stress flows out.
+                </p>
+
+                <input class="form-check-input" type="checkbox" name="place17" id="place17">
+                <label class="form-check-label" for="place17">
+                  Select Place
+                </label> 
+              </div>
+            </div>
+        
+
+
+            <!-- Post -->
+            <div class="row">
+              <div class="col-md-4 mb-4">
+                <div class="bg-image hover-overlay shadow-1-strong rounded ripple" data-mdb-ripple-color="light">
+                  <img src="https://nainitaltourism.org.in/images//tourist-places/naina-devi-bird-reserve-nainital/naina-devi-bird-reserve-nainital-tourism-opening-time-closing.jpg" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-8 mb-4">
+                <h5>Naina Devi Bird Reserve</h5>
+                <p>
+                  Uttarakhand is the first state of the country to have a National Park which was set up by the name of Hailey National Park (now Jim Corbett National Park). The hill state has carved niche for itself in taking initiative for conserving rich flora and fauna of the country. The Himalayan paradise is known to be home of some of the rarest species of animals and birds as well. Carrying on the legacy, Uttarakhand has put a step forward in contributing to the sustenance of concealed and endangered spec
+ies of birds by paying homage in the Naina Devi Bird Reserve, Pangot.
+                </p>
+
+                <input class="form-check-input" type="checkbox" name="place18" id="place18">
+                <label class="form-check-label" for="place18">
+                  Select Place
+                </label> 
+              </div>
+            </div>
+
+            <!-- Post -->
+            <div class="row">
+              <div class="col-md-4 mb-4">
+                <div class="bg-image hover-overlay shadow-1-strong rounded ripple" data-mdb-ripple-color="light">
+                  <img src="https://nainitaltourism.org.in/images/places-to-visit/headers/sariyatal-nainital-indian-tourism-entry-fee-timings-holidays-reviews-header.jpg" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-8 mb-4">
+                <h5>Sariyatal</h5>
+                <p>
+                  The lake is famous for its magnificent sunrises which make the lake gleam like a shining star as the sun rays hit its green waters. Such beauty can only be experienced to be understood and admired to its fullest essence. Nainital Tourism helps you plan a comfortable stay at Sariyatal and nearby areas and provides a curated list of companies which assist in making your vacation hassle-free.
+                </p>
+
+                <input class="form-check-input" type="checkbox" name="place19" id="place19">
+                <label class="form-check-label" for="place19">
+                  Select Place
+                </label> 
+              </div>
+            </div>
+
+            <!-- Post -->
+            <div class="row">
+              <div class="col-md-4 mb-4">
+                <div class="bg-image hover-overlay shadow-1-strong rounded ripple" data-mdb-ripple-color="light">
+                  <img src="https://nainitaltourism.org.in/images/places-to-visit/headers/khurpatal-lake-nainital-indina-tourism-entry-fee-timings-holidays-reviews-header.jpg" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-8 mb-4">
+                <h5>Khurpatal
+</h5>
+                <p>
+                  The emerald blue-green lake of Khurpatal is cradled in the Nainital district of Uttarakhand. It is encircled by the lofty pine and old cedar trees offering a gorgeous vista of the mountains. 
+
+Khurpatal, being tucked away at an astonishing height of 1,635 meters above sea level, this beautiful piece of nature is just 12 km away from Nainital and can be easily approachable.
+
+                </p>
+
+                <input class="form-check-input" type="checkbox" name="place20" id="place20">
+                <label class="form-check-label" for="place20">
+                  Select Place
+                </label> 
+              </div>
+            </div>
+            <!-- Post -->
+            <div class="row">
+              <div class="col-md-4 mb-4">
+                <div class="bg-image hover-overlay shadow-1-strong rounded ripple" data-mdb-ripple-color="light">
+                  <img src="https://media-cdn.tripadvisor.com/media/photo-s/08/32/a9/c7/kmvn-tourist-rest-house.jpg" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-8 mb-4">
+                <h5>Sukhatal Lake</h5>
+                <p>
+                  Sukha Tal cocooned in Mallital was earlier a part of the pristine Nainital Lake. Sukha Tal or Suka Tal literally suggests dry lake which is located half a km from the picturesque lake of Nainital.
+                </p>
+
+                <input class="form-check-input" type="checkbox" name="place21" id="place21">
+                <label class="form-check-label" for="place21">
+                  Select Place
+                </label> 
+              </div>
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+           </form>
+            
+          </section>
+          <!--Section: Content-->
+        </div>
+        
+      </div>
+      
+    </div>
+  </main>
+  
+    <!-- MDB -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>s
+    <!-- Custom scripts -->
+    
+{% endblock content %}

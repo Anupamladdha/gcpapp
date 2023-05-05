@@ -1,0 +1,113 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+{% block extra_head %}
+    <style>
+      body{
+        background-color: #000000;
+background-image: url("https://dynaimage.cdn.cnn.com/cnn/q_auto,w_380,c_fill,g_auto,h_214,ar_16:9/http%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F160503142233-7-india-himalayan-hideaways.jpg");
+background-attachment: fixed;
+background-size: cover;
+      }
+      input{
+        outline: none;
+        border-color: aliceblue;
+        border-radius:15px;
+        height: 3rem;
+        width: 15rem;
+        text-align:center;
+      }
+      
+      .primaryAction{
+        background-color:#5f522e;
+	border-radius:28px;
+	border:1px solid black;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+  margin: 10px;
+      }
+      /* .primaryAction:hover {
+	background-color:#929b43;
+} */
+.primaryAction:active {
+	position:relative;
+	top:1px;
+}
+.secondaryAction{
+  visibility: hidden;
+}
+#id_remember{
+  visibility:hidden;
+}
+.hb-img{
+border-radius: 50%;
+height: 30%;
+}
+      
+    </style>
+    {% endblock %}
+{% block content %}
+
+<h1 style="color:rgb(211, 131, 26); font-family: 'Roboto', sans-serif;
+font-size:4rem;">{% trans "Sign In" %}</h1>
+
+<!-- {% get_providers as socialaccount_providers %}
+
+{% if socialaccount_providers %}
+<p>{% blocktrans with site.name as site_name %}Please sign in with one
+of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
+for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
+
+<div class="socialaccount_ballot">
+
+  <ul class="socialaccount_providers">
+    {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+  </ul>
+
+  <div class="login-or">{% trans 'or' %}</div>
+
+</div>
+
+{% include "socialaccount/snippets/login_extra.html" %}
+
+{% else %}
+<p>{% blocktrans %}If you have not created an account yet, then please
+<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+{% endif %} -->
+{% comment %} <label for="id_login">Username:</label>
+<label for="id_password">Password:</label> {% endcomment %}
+<form style='
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+background-color:hsla(44, 41%, 52%, 0.836);
+opacity: 0.7;
+height:60%;
+width: 30%;
+border-radius: 10%;
+font-size: 2rem;
+padding: 50px;
+' class="login" method="POST" action="{% url 'account_login' %}">
+  {% csrf_token %}
+  <img class="hb-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXYx21ThHP5SBg5aL1ePS3AkRuW-Q_f_Pnnw&usqp=CAU" alt="">
+  <p> <input style="opacity: 1;" type="text" name="login" placeholder="Username" autocomplete="username" maxlength="150" required id="id_login"></p>
+<p> <input style="opacity: 1;" type="password" name="password" placeholder="Password" autocomplete="current-password" required id="id_password"></p>
+{% comment %} <p><label for="id_remember">Remember Me:</label> <input type="checkbox" name="remember" id="id_remember"></p> {% endcomment %}
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  {% endif %}
+  <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+</form>
+
+{% endblock %}

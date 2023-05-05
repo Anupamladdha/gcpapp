@@ -1,0 +1,70 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Sign Out" %}{% endblock %}
+{% block extra_head %}
+    <style>
+      body{
+        background-color: #000000;
+background-image: url("https://knowurlife.com/wp-content/uploads/2020/07/IMG_20190219_223154.jpg");
+background-attachment: fixed;
+background-size: cover;
+      }
+      input{
+        outline: none;
+        border-color: aliceblue;
+        border-radius:15px;
+        height: 3rem;
+        width: 15rem;
+        text-align:center;
+      }
+      
+      button{
+        background-color:#5f522e;
+	border-radius:28px;
+	border:1px solid black;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+  margin: 10px;
+      }
+      {% comment %} button:hover {
+	background-color:#5cbf2a;
+} {% endcomment %}
+button:active {
+	position:relative;
+	top:1px;
+}
+{% comment %} button{
+  visibility: hidden;
+} {% endcomment %}
+#id_remember{
+  height: auto;
+  width: auto;
+}
+      
+    </style>
+    {% endblock %}
+{% block content %}
+<h1 style="color:rgb(211, 131, 26); font-family: 'Roboto', sans-serif;
+font-size:4rem;">{% trans "Sign Out" %}</h1>
+
+<p style="color:white;
+font-size:2rem; font-family: 'Roboto', sans-serif;">{% trans 'Are you sure you want to sign out?' %}</p>
+
+<form  method="post" action="{% url 'account_logout' %}">
+  {% csrf_token %}
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+  {% endif %}
+  <button type="submit">{% trans 'Sign Out' %}</button>
+</form>
+
+
+{% endblock %}
